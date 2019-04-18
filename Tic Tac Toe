@@ -1,0 +1,80 @@
+import java.util.*;
+public class za{
+	public static void main()
+	{
+		int arr[][]=new int[3][3];
+		int i,j,f=0,g=0;
+		int d=1;
+		for(i=0;i<3;i++)
+		{
+		    for(j=0;j<3;j++)
+		    {
+		        arr[i][j]=5;
+		      }
+		  }
+		  
+		while(d<=9)
+		{   Scanner sc=new Scanner(System.in); 
+			System.out.println("Enter i,j");
+			i=sc.nextInt();
+			j=sc.nextInt();
+			if(d%2==0)
+				arr[i][j]=1;
+			else 
+				arr[i][j]=0;
+				d++;
+			if(arr[0][0]==arr[1][0]&& arr[0][0]==arr[2][0]&& arr[0][0]==1)
+				f++;
+			else if(arr[0][0]==arr[0][1]&&arr[0][0]==arr[0][2]&&arr[0][0]==1)
+			f++;
+			else if(arr[1][0]==arr[1][1]&&arr[1][0]==arr[1][2]&&arr[1][0]==1)
+				f++;
+			else if(arr[2][0]==arr[2][1]&&arr[2][0]==arr[2][2]&&arr[2][0]==1)
+				f++;
+			else if(arr[0][1]==arr[1][1]&&arr[0][1]==arr[2][1]&&arr[0][1]==1)
+				f++;
+			else if(arr[0][2]==arr[1][2]&&arr[0][2]==arr[2][2]&&arr[0][2]==1)
+				f++;
+			else if(arr[0][0]==arr[1][1]&&arr[0][0]==arr[2][2]&&arr[0][0]==1)
+				f++;
+			else if(arr[2][0]==arr[1][1]&& arr[2][0]==arr[0][2]&&arr[2][0]==1)
+				f++;
+			if(arr[0][0]==arr[1][0]&&arr[0][0]==arr[2][0]&&arr[0][0]==1)
+				g++;
+			else if(arr[0][0]==arr[0][1]&&arr[0][0]==arr[0][2]&&arr[0][0]==0)
+			f++;
+			else if(arr[1][0]==arr[1][1]&&arr[1][0]==arr[1][2]&&arr[1][0]==0)
+				g++;
+			else if(arr[2][0]==arr[2][1]&&arr[2][0]==arr[2][2]&&arr[2][0]==0)
+				g++;
+			else if(arr[0][1]==arr[1][1]&&arr[0][1]==arr[2][1]&&arr[0][1]==0)
+				g++;
+			else if(arr[0][2]==arr[1][2]&&arr[0][2]==arr[2][2]&&arr[0][2]==0)
+				g++;
+			else if(arr[0][0]==arr[1][1]&&arr[0][0]==arr[2][2]&&arr[0][0]==0)
+				g++;
+			else if(arr[2][0]==arr[1][1]&&arr[2][0]==arr[0][2]&&arr[2][0]==0)
+				g++;
+			if(f>0 || g>0)
+				break;
+			else 
+				continue;
+		
+		}
+		for(i=0;i<3;i++)
+		{
+		    for(j=0;j<3;j++)
+		    { 
+		        System.out.print(arr[i][j]);
+		      }
+		        System.out.println();
+		      }
+		      if(f==0&&g==0)
+		      System.out.println("No player wins");
+		if(f>0)
+			System.out.println("Player 1 wins");
+		else if(g>0)
+			System.out.println("Player 2 wins");
+	}
+
+}
